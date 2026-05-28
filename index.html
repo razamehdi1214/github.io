@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rana Raza Mehdi — AI Research Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #18181f;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #e8e8f0;
+    --text2: #8888a0;
+    --text3: #555568;
+    --accent: #4f8ef7;
+    --accent2: #7b5cf5;
+    --accent-dim: rgba(79,142,247,0.12);
+    --green: #3ecf8e;
+    --green-dim: rgba(62,207,142,0.1);
+    --amber: #f5a623;
+    --red: #e55353;
+    --radius: 10px;
+    --radius-lg: 16px;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --display: 'Syne', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    height: 60px;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text2);
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* ─── LAYOUT ─────────────────────────────────────── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 2.5rem);
+  }
+  section { padding: 5rem 0; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border2);
+  }
+
+  /* ─── HERO ────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(79,142,247,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(123,92,245,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--green);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .hero-eyebrow .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1.hero-name {
+    font-family: var(--display);
+    font-size: clamp(42px, 6vw, 68px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+  }
+  h1.hero-name .first { color: var(--text); display: block; }
+  h1.hero-name .last {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 16px;
+    color: var(--text2);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title strong { color: var(--accent); font-weight: 500; }
+
+  .hero-bio {
+    font-size: 15px;
+    color: var(--text2);
+    font-weight: 300;
+    max-width: 520px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .hero-links {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+  }
+  .hero-link {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 8px 16px;
+    border: 0.5px solid var(--border2);
+    border-radius: 6px;
+    color: var(--text2);
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .hero-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .hero-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .hero-link.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .hero-link.primary:hover { opacity: 0.85; }
+
+  /* Avatar */
+  .hero-photo {
+    width: 200px; height: 200px;
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border2);
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--bg3);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--bg3) 0%, var(--bg2) 100%);
+  }
+  .hero-photo-placeholder .initials {
+    font-family: var(--display);
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -2px;
+    opacity: 0.6;
+  }
+  .hero-photo-placeholder .hint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── STATS STRIP ──────────────────────────────────── */
+  .stats-strip {
+    padding: 2rem 0;
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat {
+    padding: 1.25rem 1.5rem;
+    border-right: 0.5px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ─── ABOUT ─────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .about-text p {
+    color: var(--text2);
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-text strong { color: var(--text); font-weight: 500; }
+
+  .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+  .edu-item {
+    padding: 1.25rem;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg2);
+    transition: border-color 0.2s;
+  }
+  .edu-item:hover { border-color: var(--border2); }
+  .edu-degree {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .edu-school {
+    font-size: 12px;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 3px;
+  }
+  .edu-years {
+    font-size: 11px;
+    color: var(--text3);
+    font-family: var(--mono);
+  }
+
+  /* ─── SKILLS ─────────────────────────────────────── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .skill-card {
+    padding: 1.25rem 1.5rem;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .skill-card:hover { border-color: var(--accent); background: var(--bg3); }
+  .skill-category {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: var(--bg3);
+    color: var(--text2);
+    border: 0.5px solid var(--border);
+  }
+  .skill-tag.hot { color: var(--accent); border-color: rgba(79,142,247,0.25); background: var(--accent-dim); }
+
+  /* ─── RESEARCH / PROJECTS ─────────────────────────── */
+  .projects-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .project-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg2);
+    align-items: start;
+    transition: border-color 0.2s;
+  }
+  .project-card:hover { border-color: var(--border2); }
+  .project-num {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text3);
+    line-height: 1;
+    letter-spacing: -1px;
+    min-width: 32px;
+  }
+  .project-title {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: var(--text2);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .project-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+  .project-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+  }
+  .badge-green { background: var(--green-dim); color: var(--green); }
+  .badge-blue { background: var(--accent-dim); color: var(--accent); }
+  .badge-amber { background: rgba(245,166,35,0.1); color: var(--amber); }
+  .project-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    margin-left: auto;
+    display: flex; align-items: center; gap: 4px;
+    transition: color 0.2s;
+  }
+  .project-link:hover { color: var(--accent); }
+
+  /* ─── PUBLICATIONS ───────────────────────────────── */
+  .pubs-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-item {
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--border);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    transition: background 0.2s;
+  }
+  .pub-item:first-child { border-top: 0.5px solid var(--border); }
+  .pub-year {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    min-width: 40px;
+    padding-top: 2px;
+  }
+  .pub-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .pub-venue {
+    font-size: 12px;
+    color: var(--text3);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .pub-status {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  /* ─── AWARDS ─────────────────────────────────────── */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .award-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg2);
+  }
+  .award-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: rgba(245,166,35,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .award-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .award-org {
+    font-size: 11px;
+    color: var(--text3);
+    font-family: var(--mono);
+  }
+
+  /* ─── CONTACT ───────────────────────────────────── */
+  .contact-inner {
+    max-width: 560px;
+  }
+  .contact-inner h2 {
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .contact-inner p {
+    color: var(--text2);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 10px 18px;
+    border: 0.5px solid var(--border2);
+    border-radius: 8px;
+    color: var(--text2);
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .contact-link svg { width: 15px; height: 15px; }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+  footer {
+    padding: 2rem 0;
+    border-top: 0.5px solid var(--border);
+    text-align: center;
+  }
+  footer p {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── FADE-IN ANIMATION ─────────────────────────── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 700px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo { width: 120px; height: 120px; order: -1; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 0.5px solid var(--border); }
+    .about-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .awards-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .project-card { grid-template-columns: 1fr; }
+    .project-num { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">rana.raza.mehdi</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          Ph.D. Candidate · Texas A&M University
+        </div>
+        <h1 class="hero-name">
+          <span class="first">Rana Raza</span>
+          <span class="last">Mehdi</span>
+        </h1>
+        <p class="hero-title">
+          <strong>AI Research Scientist</strong> · Cardiovascular Bioengineering · Deep Learning · Medical Imaging
+        </p>
+        <p class="hero-bio">
+          I build AI systems that help doctors diagnose heart disease earlier and more accurately —
+          combining physics-based modeling, deep learning, and cardiac imaging to make the invisible visible.
+        </p>
+        <div class="hero-links">
+          <a class="hero-link primary" href="mailto:razamehdi@tamu.edu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Get in touch
+          </a>
+          <a class="hero-link" href="https://scholar.google.com/citations?user=Vg_cwk0AAAAJ&hl=en" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Scholar
+          </a>
+          <a class="hero-link" href="https://github.com/razamehdi1214" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            GitHub
+          </a>
+          <a class="hero-link" href="https://www.linkedin.com/in/raza-mehdi-79b408138/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-placeholder">
+          <span class="initials">RR</span>
+          <span class="hint">add photo</span>
+        </div>
+        <!-- Replace above with: <img src="your-photo.jpg" alt="Rana Raza Mehdi"> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num">10<span>+</span></div>
+        <div class="stat-label">Journal & conference papers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Mentored students</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">7<span>+</span></div>
+        <div class="stat-label">Awards & fellowships</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Countries — Pakistan, Korea, USA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>
+          I'm a fifth-year Ph.D. candidate in the
+          <strong>Computational Cardiovascular Bioengineering Laboratory</strong>
+          at Texas A&M University, advised by Dr. Reza Avazmohammadi. My work sits at the intersection of
+          <strong>deep learning, medical imaging, and computational biomechanics</strong>.
+        </p>
+        <p>
+          My goal is to turn complex cardiac imaging data into non-invasive diagnostics —
+          predicting where heart tissue is damaged, how stiff it has become, and where disease is heading,
+          all without a catheter or biopsy. I do this by fusing physics-based simulation with modern AI,
+          from UNets and transformers to physics-informed neural networks.
+        </p>
+        <p>
+          I'm actively seeking <strong>AI Research Scientist</strong> roles in healthcare, medical AI,
+          and computational biology — where rigorous science and real patient impact go hand in hand.
+        </p>
+      </div>
+      <div class="edu-list fade-up">
+        <div class="edu-item">
+          <div class="edu-degree">Ph.D., Biomedical Engineering</div>
+          <div class="edu-school">Texas A&M University · College Station, TX</div>
+          <div class="edu-years">2022 – 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">M.Sc., Mechanical Engineering</div>
+          <div class="edu-school">Sejong University · Seoul, South Korea</div>
+          <div class="edu-years">2019 – 2021</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">B.Sc., Mechanical Engineering</div>
+          <div class="edu-school">UET Lahore · Pakistan</div>
+          <div class="edu-years">2014 – 2018</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--bg2); padding: 5rem 0;">
+  <div class="container">
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <div class="skill-category">Deep Learning & AI</div>
+        <div class="skill-tags">
+          <span class="skill-tag hot">PyTorch</span>
+          <span class="skill-tag hot">TensorFlow</span>
+          <span class="skill-tag hot">PINNs</span>
+          <span class="skill-tag hot">UNets</span>
+          <span class="skill-tag hot">Transformers</span>
+          <span class="skill-tag">CNNs</span>
+          <span class="skill-tag">Attention Mechanisms</span>
+          <span class="skill-tag">Diffusion Models</span>
+          <span class="skill-tag">GNNs</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-category">ML Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag hot">Python</span>
+          <span class="skill-tag hot">Multi-GPU Training</span>
+          <span class="skill-tag hot">Git / GitHub</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Experiment Tracking</span>
+          <span class="skill-tag">Data Pipelines</span>
+          <span class="skill-tag">PyVista</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-category">Domain Knowledge</div>
+        <div class="skill-tags">
+          <span class="skill-tag hot">Cardiac MRI / CT</span>
+          <span class="skill-tag hot">3D Medical Imaging</span>
+          <span class="skill-tag hot">Cardiovascular Biomechanics</span>
+          <span class="skill-tag">Strain Imaging</span>
+          <span class="skill-tag">Multimodal Clinical Data</span>
+          <span class="skill-tag">Non-invasive Diagnostics</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <div class="skill-category">Simulation & Modeling</div>
+        <div class="skill-tags">
+          <span class="skill-tag hot">Finite Element Modeling</span>
+          <span class="skill-tag hot">Inverse Problems</span>
+          <span class="skill-tag">Computational Biomechanics</span>
+          <span class="skill-tag">CFD / FSI</span>
+          <span class="skill-tag">Surrogate Modeling</span>
+          <span class="skill-tag">FORTRAN / Abaqus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH HIGHLIGHTS -->
+<section id="research">
+  <div class="container">
+    <div class="section-label">Research Highlights</div>
+    <div class="projects-list">
+
+      <div class="project-card fade-up">
+        <div class="project-num">01</div>
+        <div>
+          <div class="project-title">Multi-Fidelity Deep Learning for Myocardial Infarction Diagnosis</div>
+          <p class="project-desc">
+            Built a UNet-style segmentation model that combines large-scale simulated rodent heart data with scarce human MRI labels to predict infarct location directly from left-ventricular strain maps — achieving accurate scar detection on small human MRI cohorts without LGE imaging.
+          </p>
+          <div class="project-meta">
+            <span class="project-badge badge-green">Published · Advanced Science 2025</span>
+            <span class="project-badge badge-blue">PyTorch · UNet · Transfer Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-num">02</div>
+        <div>
+          <div class="project-title">Physics-Informed Neural Networks for In Vivo Cardiac Mechanics</div>
+          <p class="project-desc">
+            Designed a PINN embedding hyperelastic constitutive laws to predict myocardial stress-strain behavior and infer tissue material parameters from limited cardiac data. Combined PINN-derived tissue features with hemodynamics in a random-forest classifier — achieving perfect three-way separation of healthy, mild PH, and severe pulmonary hypertension.
+          </p>
+          <div class="project-meta">
+            <span class="project-badge badge-amber">Submitted · Under Review</span>
+            <span class="project-badge badge-blue">PINNs · Inverse Problems · FEM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-num">03</div>
+        <div>
+          <div class="project-title">Non-Invasive Pulmonary Artery Pressure Estimation</div>
+          <p class="project-desc">
+            Developing a deep learning pipeline to automatically segment pulmonary vessels from high-resolution CT and extract morphological features for hemodynamic modeling. Training a physics-informed model on CT-derived features combined with FSI-generated pressures to predict distal pulmonary artery pressures without running full simulations.
+          </p>
+          <div class="project-meta">
+            <span class="project-badge badge-amber">In Preparation</span>
+            <span class="project-badge badge-blue">CT Segmentation · FSI · Transformer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-num">04</div>
+        <div>
+          <div class="project-title">LLMSurv: Explainable Deep Survival Modeling for Lung Transplant Outcomes</div>
+          <p class="project-desc">
+            Developed an LLM-based explainable survival model for post-lung-transplant outcome prediction using the UNOS dataset, combining deep survival analysis with SHAP-based model explanations to surface clinically interpretable risk factors for transplant physicians.
+          </p>
+          <div class="project-meta">
+            <span class="project-badge badge-amber">Submitted · Under Review</span>
+            <span class="project-badge badge-blue">LLMs · Survival Analysis · SHAP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" style="background: var(--bg2); padding: 5rem 0;">
+  <div class="container">
+    <div class="section-label">Selected Publications</div>
+    <div class="pubs-list">
+
+      <div class="pub-item fade-up">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Non-invasive diagnosis of chronic myocardial infarction via composite in-silico-human data learning</div>
+          <div class="pub-venue">Advanced Science · DOI: 10.1002/advs.202406933</div>
+          <span class="pub-status badge-green" style="background: var(--green-dim); color: var(--green);">Published</span>
+        </div>
+      </div>
+
+      <div class="pub-item fade-up">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Right Ventricular Stiffening and Anisotropy Alterations in Pulmonary Hypertension</div>
+          <div class="pub-venue">Journal of the American Heart Association, 14(5) · DOI: 10.1161/JAHA.124.037126</div>
+          <span class="pub-status" style="background: var(--green-dim); color: var(--green);">Published</span>
+        </div>
+      </div>
+
+      <div class="pub-item fade-up">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Estimating full stress–strain behavior of cardiac tissues in vivo using PINN</div>
+          <div class="pub-venue">Under Review · DOI: 10.13140/RG.2.2.12844.42885</div>
+          <span class="pub-status" style="background: rgba(245,166,35,0.1); color: var(--amber);">Under Review</span>
+        </div>
+      </div>
+
+      <div class="pub-item fade-up">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">LLMSurv: An explainable deep survival model for post–lung-transplant survival prediction</div>
+          <div class="pub-venue">Under Review</div>
+          <span class="pub-status" style="background: rgba(245,166,35,0.1); color: var(--amber);">Under Review</span>
+        </div>
+      </div>
+
+      <div class="pub-item fade-up">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">Machine learning-based classification of cardiac relaxation impairment using sarcomere length and intracellular calcium transients</div>
+          <div class="pub-venue">Computers in Biology and Medicine, 163 · DOI: 10.1016/j.compbiomed.2023.107134</div>
+          <span class="pub-status" style="background: var(--green-dim); color: var(--green);">Published</span>
+        </div>
+      </div>
+
+      <div class="pub-item fade-up">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">Determination of third-order elastic constants using change of cross-sectional resonance frequencies by acoustoelastic effect</div>
+          <div class="pub-venue">Journal of Applied Physics, 130(23) · DOI: 10.1063/5.0069579</div>
+          <span class="pub-status" style="background: var(--green-dim); color: var(--green);">Published</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <a href="https://scholar.google.com/citations?user=Vg_cwk0AAAAJ&hl=en" target="_blank" style="font-family: var(--mono); font-size: 12px; color: var(--accent); display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
+        View all publications on Google Scholar →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <div class="section-label">Awards & Fellowships</div>
+    <div class="awards-grid">
+      <div class="award-item fade-up">
+        <div class="award-icon">🏆</div>
+        <div>
+          <div class="award-title">AHA Predoctoral Fellowship (25PRE1377496)</div>
+          <div class="award-org">American Heart Association · 2025–2026</div>
+        </div>
+      </div>
+      <div class="award-item fade-up">
+        <div class="award-icon">🎓</div>
+        <div>
+          <div class="award-title">HEEP Graduate Fellowship</div>
+          <div class="award-org">Hagler Institute for Advanced Study, TAMU · 2025</div>
+        </div>
+      </div>
+      <div class="award-item fade-up">
+        <div class="award-icon">✈️</div>
+        <div>
+          <div class="award-title">GREAT Fellowship</div>
+          <div class="award-org">Texas A&M University · 2025–2026</div>
+        </div>
+      </div>
+      <div class="award-item fade-up">
+        <div class="award-icon">🥈</div>
+        <div>
+          <div class="award-title">Runner-up · Best Oral Presentation</div>
+          <div class="award-org">Summer Biomechanics, Bioengineering & Biotransport Conference · 2024</div>
+        </div>
+      </div>
+      <div class="award-item fade-up">
+        <div class="award-icon">🏅</div>
+        <div>
+          <div class="award-title">Best Abstract Award</div>
+          <div class="award-org">8th Annual CVBE Symposium · Houston Methodist · 2024</div>
+        </div>
+      </div>
+      <div class="award-item fade-up">
+        <div class="award-icon">📝</div>
+        <div>
+          <div class="award-title">Student Paper Competition Finalist</div>
+          <div class="award-org">Summer Biomechanics, Bioengineering & Biotransport Conference · 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--bg2); padding: 5rem 0;">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-inner">
+      <h2>Let's work<br>together.</h2>
+      <p>
+        I'm actively seeking AI Research Scientist positions — particularly in medical AI, computational biology,
+        and healthcare technology. Open to industry, national labs, and research-intensive companies.
+        Feel free to reach out.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:razamehdi@tamu.edu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          razamehdi@tamu.edu
+        </a>
+        <a class="contact-link" href="tel:9793269698">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          979-326-9698
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/raza-mehdi-79b408138/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="contact-link" href="https://github.com/razamehdi1214" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          GitHub
+        </a>
+        <a class="contact-link" href="https://scholar.google.com/citations?user=Vg_cwk0AAAAJ&hl=en" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Google Scholar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Rana Raza Mehdi · College Station, TX · Built with pure HTML/CSS</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
